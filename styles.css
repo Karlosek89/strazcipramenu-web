@@ -1,0 +1,382 @@
+/* Strážci pramenů — sdílené styly pro landing + privacy
+   Barvy odpovídají aplikaci (kPrimary #1B5E6E, kAccent #4CAF82). */
+
+:root {
+  --primary: #1B5E6E;
+  --primary-dark: #0D3340;
+  --accent: #4CAF82;
+  --accent-light: #C8E6D5;
+  --bg: #F4F8F9;
+  --text-primary: #1A2932;
+  --text-secondary: #5A6C75;
+  --divider: #DCE5E8;
+  --shadow: 0 4px 16px rgba(13, 51, 64, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--primary);
+}
+
+/* ──────────── HERO ──────────── */
+
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 80px 20px 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%,
+    rgba(76, 175, 130, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  font-weight: 400;
+  opacity: 0.92;
+  margin-bottom: 12px;
+}
+
+.hero .badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+/* ──────────── FEATURES ──────────── */
+
+.features {
+  max-width: 960px;
+  margin: -50px auto 60px;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  position: relative;
+  z-index: 2;
+}
+
+.features h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 32px;
+  color: var(--primary);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.feature {
+  text-align: center;
+  padding: 16px;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.feature h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ──────────── SUBSCRIBE ──────────── */
+
+.subscribe {
+  max-width: 600px;
+  margin: 0 auto 80px;
+  padding: 40px 30px;
+  background: var(--accent-light);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.subscribe h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+}
+
+.subscribe p {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.subscribe-form input[type="email"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 14px 18px;
+  border: 2px solid white;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.subscribe-form input[type="email"]:focus {
+  border-color: var(--primary);
+}
+
+.subscribe-form button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.subscribe-form button:hover {
+  background: var(--primary-dark);
+}
+
+.subscribe-form button:active {
+  transform: scale(0.97);
+}
+
+.subscribe-note {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 16px;
+}
+
+/* ──────────── FOOTER ──────────── */
+
+footer {
+  background: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+footer a:hover {
+  border-bottom-color: white;
+}
+
+footer .footer-links {
+  margin-bottom: 12px;
+}
+
+footer .footer-links a {
+  margin: 0 12px;
+}
+
+/* ──────────── PRIVACY PAGE ──────────── */
+
+.privacy {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  background: white;
+}
+
+.privacy h1 {
+  font-size: 2.25rem;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.privacy .effective {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--divider);
+}
+
+.privacy h2 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 16px;
+  color: var(--primary);
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent-light);
+}
+
+.privacy h3 {
+  font-size: 1.15rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.privacy p {
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.privacy ul {
+  margin: 12px 0 16px 24px;
+}
+
+.privacy ul li {
+  margin-bottom: 8px;
+}
+
+.privacy strong {
+  color: var(--primary-dark);
+}
+
+.privacy .note {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  padding: 16px 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.privacy table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  background: var(--bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.privacy table th,
+.privacy table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--divider);
+}
+
+.privacy table th {
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.privacy table tr:last-child td {
+  border-bottom: none;
+}
+
+.privacy .back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+/* ──────────── RESPONSIVE ──────────── */
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 60px 16px 80px;
+  }
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+  .hero .tagline {
+    font-size: 1.1rem;
+  }
+  .features {
+    margin-top: -30px;
+    padding: 24px 16px;
+  }
+  .subscribe {
+    padding: 30px 20px;
+  }
+  .subscribe-form {
+    flex-direction: column;
+  }
+  .subscribe-form input[type="email"],
+  .subscribe-form button {
+    width: 100%;
+  }
+  .privacy {
+    padding: 40px 16px;
+  }
+  .privacy h1 {
+    font-size: 1.75rem;
+  }
+}

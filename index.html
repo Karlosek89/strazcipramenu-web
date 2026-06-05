@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1B5E6E" />
+  <title>Strážci pramenů — mapujeme studánky v Česku a na Slovensku</title>
+  <meta name="description" content="Připravujeme mobilní aplikaci Studánky pro mapování českých a slovenských pramenů, studánek a pítek. Komunitní mapa s tisíci místy a měřením průtoku." />
+  <meta property="og:title" content="Strážci pramenů" />
+  <meta property="og:description" content="Aplikace která mapuje studánky, prameny a pítka napříč ČR a SK." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://strazcipramenu.cz" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Strážci pramenů</h1>
+      <p class="tagline">Mapa studánek, pramenů a pítek v Česku a na Slovensku.</p>
+      <p class="tagline">Komunitně. Detailně. Pro každého kdo chodí do přírody.</p>
+      <div class="badge">🚀 Připravujeme aplikaci</div>
+    </div>
+  </header>
+
+  <section class="features">
+    <h2>Co bude aplikace umět</h2>
+    <div class="feature-grid">
+
+      <div class="feature">
+        <span class="feature-icon">🗺️</span>
+        <h3>Mapa pramenů</h3>
+        <p>Tisíce studánek, pítek a studen v ČR a na Slovensku — připravené v databázi.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">💧</span>
+        <h3>Měření průtoku</h3>
+        <p>Sleduj kolik vody teče a jak se to v čase mění. Tep krajiny v reálném čase.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">📸</span>
+        <h3>Fotky a popisy</h3>
+        <p>Přidávej fotky, hodnoť kvalitu vody a sdílej zkušenosti s komunitou.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🏆</span>
+        <h3>Žebříček strážců</h3>
+        <p>Sbírej body za logování návštěv a získej titul Strážce pramenu, Topografa nebo Dokumentaristy.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">🌿</span>
+        <h3>Komunitní ověřování</h3>
+        <p>Každá nová studánka je ověřena dalšími návštěvníky — žádné podvody, jen důvěryhodná data.</p>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">📴</span>
+        <h3>Funguje offline</h3>
+        <p>V lese bez signálu? Zalog studánku stejně — data se odešlou až po návratu k síti.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="subscribe">
+    <h2>Dej nám vědět, až spustíme</h2>
+    <p>Nech nám email — pošleme ti odkaz na stažení v den vydání.</p>
+
+    <!--
+      Subscribe formulář přes Formspree.io (free do 50 emailů/měsíc).
+      Po registraci na formspree dostaneš endpoint URL, kterou
+      vložíš místo "YOUR_FORM_ID" v action.
+    -->
+    <form class="subscribe-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="email" name="email" placeholder="tvuj@email.cz" required />
+      <input type="hidden" name="_subject" value="Nový subscriber na strazcipramenu.cz" />
+      <input type="hidden" name="_next" value="https://strazcipramenu.cz/dekujeme.html" />
+      <button type="submit">Chci dostat oznámení</button>
+    </form>
+
+    <p class="subscribe-note">
+      Email použijeme pouze jednou — pro oznámení vydání aplikace.<br />
+      Žádný spam, žádné prodávání dat třetím stranám.
+    </p>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/soukromi.html">Zásady ochrany osobních údajů</a>
+      <a href="mailto:info@strazcipramenu.cz">Kontakt</a>
+    </div>
+    <div>
+      © 2026 Strážci pramenů · Vyvíjíme z lásky k české přírodě
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1B5E6E" />
+  <title>Zásady ochrany osobních údajů — Strážci pramenů</title>
+  <meta name="description" content="Zásady ochrany osobních údajů aplikace Studánky podle GDPR. Jak nakládáme s tvými daty a jaká máš práva." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main class="privacy">
+    <a href="/" class="back-link">← Zpět na hlavní stránku</a>
+
+    <h1>Zásady ochrany osobních údajů</h1>
+    <p class="effective">Účinnost: <strong>6. června 2026</strong></p>
+
+    <p>
+      Tyto zásady popisují, jak aplikace <strong>Studánky</strong> (dále jen „aplikace")
+      zpracovává tvé osobní údaje. Zásady jsou v souladu s nařízením EU
+      2016/679 (GDPR) a zákonem č. 110/2019 Sb. o zpracování osobních údajů.
+    </p>
+
+    <h2>1. Kdo zpracovává tvá data (správce)</h2>
+    <p>
+      Aplikaci provozuje <strong>[TVÉ JMÉNO A PŘÍJMENÍ]</strong>, fyzická osoba se
+      sídlem v České republice.
+    </p>
+    <p>
+      <strong>Kontakt:</strong> <a href="mailto:info@strazcipramenu.cz">info@strazcipramenu.cz</a><br />
+      <strong>Web:</strong> <a href="https://strazcipramenu.cz">https://strazcipramenu.cz</a>
+    </p>
+    <p>
+      Nemáme pověřence pro ochranu osobních údajů (DPO) — jako fyzická
+      osoba nepodléháme této povinnosti.
+    </p>
+
+    <h2>2. Jaké údaje sbíráme a proč</h2>
+
+    <h3>2.1 Údaje z registrace</h3>
+    <ul>
+      <li><strong>E-mail</strong> (povinné) — pro vytvoření účtu a komunikaci</li>
+      <li><strong>Přezdívka</strong> (povinné) — zobrazuje se v žebříčku a u tvých příspěvků</li>
+      <li><strong>Profilová fotka</strong> (volitelné) — zobrazuje se v profilu</li>
+      <li><strong>Heslo</strong> (povinné) — uloženo zašifrované přes Firebase Authentication</li>
+    </ul>
+    <p>
+      <strong>Právní základ:</strong> plnění smlouvy (čl. 6 odst. 1 písm. b GDPR) —
+      bez registrace aplikace neumí fungovat.
+    </p>
+
+    <h3>2.2 Údaje o tvé aktivitě</h3>
+    <ul>
+      <li><strong>GPS souřadnice</strong> studánek, které logujeme/přidáváš</li>
+      <li><strong>Datum a čas</strong> logů a měření</li>
+      <li><strong>Fotografie studánek</strong>, které nahraješ</li>
+      <li><strong>Měření průtoku, popisy, hodnocení</strong></li>
+      <li><strong>Počet bodů, dosažená úroveň, medaile</strong></li>
+    </ul>
+    <p>
+      <strong>Právní základ:</strong> plnění smlouvy a oprávněný zájem (kvalita
+      komunitní databáze).
+    </p>
+
+    <div class="note">
+      <strong>⚠️ Důležité:</strong> Aplikace sleduje polohu <strong>POUZE když ji aktivně
+      používáš</strong> (= přidáváš studánku, loguješ návštěvu). <strong>Nesleduje tě
+      na pozadí.</strong> GPS data se vážou ke konkrétní studánce, ne k tvému pohybu.
+    </div>
+
+    <h3>2.3 Technické údaje</h3>
+    <ul>
+      <li><strong>Typ zařízení a OS verze</strong> (přes Firebase Crashlytics — anonymní)</li>
+      <li><strong>Pádové zprávy a chyby</strong> (= pro opravy)</li>
+      <li><strong>IP adresa</strong> (zpracovává Google Firebase v rámci hostingu)</li>
+    </ul>
+    <p>
+      <strong>Právní základ:</strong> oprávněný zájem (stabilita aplikace).
+    </p>
+
+    <h3>2.4 Anti-cheat data</h3>
+    <ul>
+      <li><strong>Detekce falešné polohy</strong> (mock GPS, teleport)</li>
+      <li><strong>Rychlost mezi logy</strong> (= pro detekci podvodů)</li>
+    </ul>
+    <p>
+      <strong>Právní základ:</strong> oprávněný zájem (férovost komunitního žebříčku).
+    </p>
+
+    <h2>3. Komu data předáváme (zpracovatelé)</h2>
+
+    <h3>3.1 Google (Firebase Platform)</h3>
+    <ul>
+      <li><strong>Účel:</strong> ukládání dat, autentizace, hosting, push notifikace</li>
+      <li><strong>Lokalita:</strong> EU servery (region europe-west)</li>
+      <li><strong>Dohoda:</strong> Standardní smluvní doložky EU (SCC)</li>
+      <li><strong>Více:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">firebase.google.com/support/privacy</a></li>
+    </ul>
+
+    <h3>3.2 Google AdMob (volitelné, jen pokud zapnuto)</h3>
+    <ul>
+      <li><strong>Účel:</strong> zobrazování reklamy v aplikaci</li>
+      <li><strong>Data:</strong> anonymizované ID zařízení, IP, zobrazené reklamy</li>
+      <li><strong>GDPR:</strong> souhlas se sběrem ti zobrazí samostatný dialog (UMP)</li>
+      <li>Pokud souhlas odmítneš, reklama se zobrazuje jen kontextová (= žádné profilování)</li>
+      <li><strong>Více:</strong> <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">policies.google.com/technologies/ads</a></li>
+    </ul>
+
+    <h3>3.3 Apple (Sign in with Apple)</h3>
+    <p>
+      Pouze pokud se přihlásíš přes Apple účet. Apple nám předá pouze tvé
+      jméno a anonymizovaný email (pokud zvolíš „Skrýt můj email").
+    </p>
+
+    <h3>3.4 OpenStreetMap</h3>
+    <p>
+      Mapové dlaždice se načítají z OpenStreetMap (CC-BY-SA). OpenStreetMap
+      nedostává tvé osobní údaje, jen request na dlaždici.
+    </p>
+
+    <p>
+      <strong>Mimo tyto výslovně uvedené zpracovatele NEPŘEDÁVÁME tvá data
+      nikomu dalšímu.</strong> Neprodáváme data marketingovým agenturám,
+      nepronajímáme je třetím stranám.
+    </p>
+
+    <h2>4. Jak dlouho data uchováváme</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Typ dat</th>
+          <th>Doba uchování</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Účet (email, přezdívka)</td>
+          <td>Dokud nesmažeš účet</td>
+        </tr>
+        <tr>
+          <td>Tvé příspěvky (logy, fotky, popisy)</td>
+          <td>Dokud nesmažeš účet, pak anonymizace</td>
+        </tr>
+        <tr>
+          <td>Logy aplikace (chyby, pády)</td>
+          <td>90 dnů</td>
+        </tr>
+        <tr>
+          <td>Anti-cheat záznamy</td>
+          <td>6 měsíců</td>
+        </tr>
+        <tr>
+          <td>Smazaný účet</td>
+          <td>Smazán okamžitě, zálohy 30 dnů</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <strong>Anonymizace</strong> = po smazání účtu zůstanou tvé příspěvky
+      (= studánky, fotky, ověření), ale bez vazby na tebe. Komunita o ně nepřijde.
+    </p>
+
+    <h2>5. Tvá práva (GDPR)</h2>
+    <p>Máš nárok na:</p>
+    <ul>
+      <li>✅ <strong>Přístup ke svým datům</strong> — řekni nám emailem a do 30 dnů ti pošleme strukturovaný JSON</li>
+      <li>✅ <strong>Opravu nesprávných údajů</strong> — můžeš v aplikaci v sekci Profil</li>
+      <li>✅ <strong>Výmaz účtu</strong> („právo být zapomenut") — přímo v aplikaci → Profil → Smazat účet</li>
+      <li>✅ <strong>Omezení zpracování</strong> — napiš nám</li>
+      <li>✅ <strong>Přenositelnost</strong> — JSON export na vyžádání</li>
+      <li>✅ <strong>Námitka proti zpracování</strong> — napiš důvod</li>
+      <li>✅ <strong>Stížnost u Úřadu pro ochranu osobních údajů</strong> (<a href="https://www.uoou.cz" target="_blank" rel="noopener">www.uoou.cz</a>)</li>
+    </ul>
+    <p>
+      <strong>Reakce na žádost:</strong> do 30 dnů od přijetí emailu na
+      <a href="mailto:info@strazcipramenu.cz">info@strazcipramenu.cz</a>.
+    </p>
+
+    <h2>6. Cookies a podobné technologie</h2>
+    <p>
+      Webová stránka strazcipramenu.cz používá <strong>pouze technické cookies</strong>
+      nezbytné pro fungování (= žádné marketing / tracking cookies).
+    </p>
+    <p>
+      Mobilní aplikace cookies nepoužívá.
+    </p>
+
+    <h2>7. Děti a mladiství</h2>
+    <p>
+      Aplikace <strong>není určená dětem mladším 13 let.</strong> Pokud zjistíš,
+      že dítě mladší 13 let má účet bez souhlasu rodičů, napiš nám a účet odstraníme.
+    </p>
+
+    <h2>8. Změny zásad</h2>
+    <p>Pokud zásady upravíme, dáme ti vědět:</p>
+    <ul>
+      <li>E-mailem (pokud máš účet)</li>
+      <li>Notifikací v aplikaci</li>
+      <li>Aktualizací data „Účinnost" na začátku tohoto dokumentu</li>
+    </ul>
+    <p>
+      Pokračováním v používání aplikace po změně potvrzuješ, že s novými
+      podmínkami souhlasíš.
+    </p>
+
+    <h2>9. Kontakt</h2>
+    <p>S jakýmkoliv dotazem ohledně zpracování dat se obrať na:</p>
+    <p>
+      📧 <strong><a href="mailto:info@strazcipramenu.cz">info@strazcipramenu.cz</a></strong>
+    </p>
+    <p>Odpovídáme nejpozději do <strong>30 dnů</strong>.</p>
+
+    <p style="margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--divider); font-size: 0.85rem; color: var(--text-secondary);">
+      <em>Tyto zásady byly vypracovány v souladu s nařízením EU 2016/679
+      (GDPR), zákonem č. 110/2019 Sb. a doporučeními Úřadu pro ochranu
+      osobních údajů.</em>
+    </p>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Hlavní stránka</a>
+      <a href="mailto:info@strazcipramenu.cz">Kontakt</a>
+    </div>
+    <div>© 2026 Strážci pramenů</div>
+  </footer>
+
+</body>
+</html>
