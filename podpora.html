@@ -138,29 +138,64 @@
         <h3>Na mobilu? Pošli platbu ručně</h3>
         <p class="bank-desc">
           QR kódy se nedají naskenovat ze stejného mobilu, na kterém jsou.
-          Klikni na tlačítka níž ke zkopírování a vlož údaje do své
-          bankovní aplikace.
+          Vyber si podle země a klikni na <strong>„Kopírovat"</strong> —
+          údaje vložíš do své bankovní aplikace.
         </p>
-        <dl class="bank-list">
-          <dt>Číslo účtu</dt>
-          <dd>
-            <code id="bank-account">2700191214/2010</code>
-            <button class="copy-btn" data-target="bank-account">Kopírovat</button>
-            <span class="bank-name">Fio banka</span>
-          </dd>
-          <dt>IBAN</dt>
-          <dd>
-            <code id="bank-iban">CZ4920100000002700191214</code>
-            <button class="copy-btn" data-target="bank-iban">Kopírovat</button>
-          </dd>
-          <dt>Zpráva pro příjemce</dt>
-          <dd>
-            <code id="bank-msg">Strazci pramenu — podpora</code>
-            <button class="copy-btn" data-target="bank-msg">Kopírovat</button>
-          </dd>
-        </dl>
+
+        <!-- Z Česka — stačí číslo účtu -->
+        <div class="bank-block">
+          <h4 class="bank-block-title">🇨🇿 Z Česka</h4>
+          <p class="bank-block-hint">
+            Pro českou banku stačí <strong>číslo účtu</strong> — nemusíš
+            kopírovat IBAN. Zadáš sumu v korunách, banka odešle hned.
+          </p>
+          <dl class="bank-list">
+            <dt>Číslo účtu</dt>
+            <dd>
+              <code id="bank-account">2700191214/2010</code>
+              <button class="copy-btn" data-target="bank-account">Kopírovat</button>
+              <span class="bank-name">Fio banka</span>
+            </dd>
+            <dt>Zpráva pro příjemce</dt>
+            <dd>
+              <code id="bank-msg">Strazci pramenu — podpora</code>
+              <button class="copy-btn" data-target="bank-msg">Kopírovat</button>
+            </dd>
+          </dl>
+        </div>
+
+        <!-- Ze Slovenska / EU — SEPA přes IBAN -->
+        <div class="bank-block">
+          <h4 class="bank-block-title">🇸🇰 Zo Slovenska / EU</h4>
+          <p class="bank-block-hint">
+            Pošli platbu cez <strong>SEPA</strong> na náš IBAN. Sumu zadaj
+            v eurách — banka ju automaticky prevedie na koruny (kurz tvojej
+            banky). Z bežných slovenských účtov je platba zadarmo a príde
+            do 1 pracovného dňa.
+          </p>
+          <dl class="bank-list">
+            <dt>IBAN</dt>
+            <dd>
+              <code id="bank-iban">CZ4920100000002700191214</code>
+              <button class="copy-btn" data-target="bank-iban">Kopírovat</button>
+            </dd>
+            <dt>BIC / SWIFT</dt>
+            <dd>
+              <code id="bank-bic">FIOBCZPPXXX</code>
+              <button class="copy-btn" data-target="bank-bic">Kopírovat</button>
+              <span class="bank-name">Fio banka</span>
+            </dd>
+            <dt>Správa pre prijímateľa</dt>
+            <dd>
+              <code id="bank-msg-sk">Strazci pramenu — podpora</code>
+              <button class="copy-btn" data-target="bank-msg-sk">Kopírovat</button>
+            </dd>
+          </dl>
+        </div>
+
         <p class="bank-note">
-          Částku si zvolíš sám podle svého uvážení. Děkujeme za jakýkoli příspěvek! 💚
+          Částku si zvolíš sám podle svého uvážení.
+          Děkujeme za jakýkoli příspěvek! 💚
         </p>
       </div>
 

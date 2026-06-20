@@ -638,8 +638,36 @@ footer .footer-links a {
   line-height: 1.6;
 }
 
+/* CZ / SK bloky uvnitř bank-details */
+.bank-block {
+  background: white;
+  border-radius: 14px;
+  padding: 20px 18px;
+  margin: 0 auto 16px;
+  max-width: 520px;
+  border: 1px solid var(--divider);
+}
+
+.bank-block-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.bank-block-hint {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.bank-block-hint strong {
+  color: var(--primary-dark);
+}
+
 .bank-list {
-  margin: 0 auto;
+  margin: 0;
   max-width: 520px;
 }
 
