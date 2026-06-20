@@ -581,33 +581,41 @@ footer .footer-links a {
 
 /* Sekce s bankovními údaji — fallback pro ruční platbu */
 .bank-details {
-  background: var(--bg);
-  border-radius: 16px;
-  padding: 28px 24px;
-  margin-top: 32px;
+  background: linear-gradient(180deg, var(--accent-light) 0%, var(--bg) 100%);
+  border-radius: 20px;
+  padding: 32px 24px;
+  margin-top: 40px;
   text-align: left;
-  border: 1px solid var(--divider);
+  border: 2px solid var(--accent);
+  scroll-margin-top: 20px;
+}
+
+.bank-icon {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 4px;
 }
 
 .bank-details h3 {
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary-dark);
   margin-bottom: 8px;
   text-align: center;
 }
 
 .bank-desc {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
+  font-size: 0.95rem;
+  color: var(--text-primary);
   text-align: center;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin: 0 auto 24px;
+  max-width: 480px;
+  line-height: 1.6;
 }
 
 .bank-list {
   margin: 0 auto;
-  max-width: 480px;
+  max-width: 520px;
 }
 
 .bank-list dt {
@@ -615,12 +623,12 @@ footer .footer-links a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-secondary);
-  margin-top: 14px;
-  margin-bottom: 4px;
+  color: var(--primary);
+  margin-top: 18px;
+  margin-bottom: 6px;
 }
 
-.bank-list dt:first-child {
+.bank-list dt:first-of-type {
   margin-top: 0;
 }
 
@@ -628,32 +636,67 @@ footer .footer-links a {
   font-size: 1rem;
   color: var(--text-primary);
   margin-left: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .bank-list code {
   font-family: 'Courier New', monospace;
   background: white;
-  padding: 6px 10px;
-  border-radius: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
   border: 1px solid var(--divider);
   font-size: 0.95rem;
   letter-spacing: 0.02em;
   user-select: all;
   -webkit-user-select: all;
+  font-weight: 600;
+  flex: 1 1 auto;
+  min-width: 0;
+  word-break: break-all;
+}
+
+.copy-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.copy-btn:hover {
+  background: var(--primary-dark);
+}
+
+.copy-btn:active {
+  transform: scale(0.96);
+}
+
+.copy-btn.copied {
+  background: var(--accent);
 }
 
 .bank-list .bank-name {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-secondary);
-  margin-left: 6px;
+  flex: 0 0 auto;
 }
 
 .bank-note {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  font-size: 0.92rem;
+  color: var(--text-primary);
   text-align: center;
-  margin-top: 20px;
-  font-style: italic;
+  margin-top: 24px;
+  font-weight: 600;
 }
 
 .qr-thanks {
@@ -722,5 +765,15 @@ footer .footer-links a {
   .support-logo {
     width: 72px;
     height: 72px;
+  }
+  .bank-details {
+    padding: 24px 16px;
+  }
+  .bank-list dd {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .copy-btn {
+    width: 100%;
   }
 }

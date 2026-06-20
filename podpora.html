@@ -63,8 +63,8 @@
     <section class="qr-section">
       <h2>Vyberte si částku</h2>
       <p class="qr-subtitle">
-        Naskenujte QR kód mobilem (z PC obrazovky) nebo na mobilu
-        klepněte na tlačítko a otevře se vaše bankovní aplikace.
+        Naskenujte QR kód svou bankovní aplikací z obrazovky počítače.
+        Jste na mobilu? Sjeďte níž — <a href="#bank-manual">opište IBAN do své banky</a>.
       </p>
 
       <!-- 3 PŘEDNASTAVENÉ ČÁSTKY -->
@@ -79,11 +79,6 @@
             <img src="qr_50.png" alt="QR kód 50 Kč" class="qr-image" />
           </div>
           <div class="qr-amount">50 Kč</div>
-          <a class="qr-button qr-pay-link"
-             href="https://qr-platba.cz/?platba=SPD%2A1.0%2AACC%3ACZ4920100000002700191214%2AAM%3A50%2ACC%3ACZK%2AMSG%3ADekuji%20ti%20za%20pivko%20%28Strazci%20Pramenu%29"
-             data-spd="spd:SPD*1.0*ACC:CZ4920100000002700191214*AM:50*CC:CZK*MSG:Dekuji%20ti%20za%20pivko%20(Strazci%20Pramenu)">
-            📱 Zaplatit z mobilu
-          </a>
         </div>
 
         <!-- 200 Kč — DOPORUČENO -->
@@ -96,11 +91,6 @@
             <img src="qr_200.png" alt="QR kód 200 Kč" class="qr-image" />
           </div>
           <div class="qr-amount">200 Kč</div>
-          <a class="qr-button qr-button-primary qr-pay-link"
-             href="https://qr-platba.cz/?platba=SPD%2A1.0%2AACC%3ACZ4920100000002700191214%2AAM%3A200%2ACC%3ACZK%2AMSG%3AVazne%20dekuji%20za%20pekny%20prispevek%20%28Strazci%20pramenu%29"
-             data-spd="spd:SPD*1.0*ACC:CZ4920100000002700191214*AM:200*CC:CZK*MSG:Vazne%20dekuji%20za%20pekny%20prispevek%20(Strazci%20pramenu)">
-            📱 Zaplatit z mobilu
-          </a>
         </div>
 
         <!-- 500 Kč — patron -->
@@ -112,11 +102,6 @@
             <img src="qr_500.png" alt="QR kód 500 Kč" class="qr-image" />
           </div>
           <div class="qr-amount">500 Kč</div>
-          <a class="qr-button qr-pay-link"
-             href="https://qr-platba.cz/?platba=SPD%2A1.0%2AACC%3ACZ4920100000002700191214%2AAM%3A500%2ACC%3ACZK%2AMSG%3AVau%2C%20vazne%20dekuji%20za%20peknou%20podporu.%28Strazci%20pramenu%29"
-             data-spd="spd:SPD*1.0*ACC:CZ4920100000002700191214*AM:500*CC:CZK*MSG:Vau,%20vazne%20dekuji%20za%20peknou%20podporu.(Strazci%20pramenu)">
-            📱 Zaplatit z mobilu
-          </a>
         </div>
 
       </div>
@@ -126,39 +111,43 @@
         <div class="qr-emoji">🪵</div>
         <h3 class="qr-title">Vlastní částka</h3>
         <p class="qr-desc">
-          Pošli jakoukoli částku podle svého uvážení. Naskenuj kódem
-          z PC, nebo na mobilu klepni na tlačítko — v bance si pak
+          Naskenuj tento QR kód svou bankovní aplikací a v bance si
           sám zadej, kolik chceš poslat.
         </p>
         <div class="qr-box">
           <img src="qr_custom.png" alt="QR kód vlastní částka" class="qr-image" />
         </div>
-        <a class="qr-button qr-button-custom qr-pay-link"
-           href="https://qr-platba.cz/?platba=SPD%2A1.0%2AACC%3ACZ4920100000002700191214%2AAM%3A0%2ACC%3ACZK%2AMSG%3AVaz%C3%ADm%20si%20tve%20podpory%21%20Kazdy%20prispevek%20pomaha%20Strazci%20pra."
-           data-spd="spd:SPD*1.0*ACC:CZ4920100000002700191214*AM:0*CC:CZK*MSG:Vaz%C3%ADm%20si%20tve%20podpory!%20Kazdy%20prispevek%20pomaha%20Strazci%20pra.">
-          📱 Otevřít v bankovní aplikaci
-        </a>
       </div>
 
       <!-- Bankovní údaje pro ruční platbu -->
-      <div class="bank-details">
-        <h3>Nefunguje skenování? Pošli to ručně</h3>
+      <div class="bank-details" id="bank-manual">
+        <div class="bank-icon">📱</div>
+        <h3>Na mobilu? Pošli platbu ručně</h3>
         <p class="bank-desc">
-          Naskenovat QR na mobilu nejde a tlačítko v tvé bance nereaguje?
-          Otevři svou bankovní aplikaci a přepiš tyto údaje:
+          QR kódy se nedají naskenovat ze stejného mobilu, na kterém jsou.
+          Klikni na tlačítka níž ke zkopírování a vlož údaje do své
+          bankovní aplikace.
         </p>
         <dl class="bank-list">
           <dt>Číslo účtu</dt>
-          <dd><code>2700191214 / 2010</code> <span class="bank-name">(Fio banka)</span></dd>
+          <dd>
+            <code id="bank-account">2700191214/2010</code>
+            <button class="copy-btn" data-target="bank-account">Kopírovat</button>
+            <span class="bank-name">Fio banka</span>
+          </dd>
           <dt>IBAN</dt>
-          <dd><code>CZ49 2010 0000 0027 0019 1214</code></dd>
-          <dt>Měna</dt>
-          <dd>CZK</dd>
-          <dt>Zpráva pro příjemce (volitelné)</dt>
-          <dd><code>Strazci pramenu — podpora</code></dd>
+          <dd>
+            <code id="bank-iban">CZ4920100000002700191214</code>
+            <button class="copy-btn" data-target="bank-iban">Kopírovat</button>
+          </dd>
+          <dt>Zpráva pro příjemce</dt>
+          <dd>
+            <code id="bank-msg">Strazci pramenu — podpora</code>
+            <button class="copy-btn" data-target="bank-msg">Kopírovat</button>
+          </dd>
         </dl>
         <p class="bank-note">
-          Částku si zvolíš sám. Děkujeme za jakýkoli příspěvek! 💚
+          Částku si zvolíš sám podle svého uvážení. Děkujeme za jakýkoli příspěvek! 💚
         </p>
       </div>
 
@@ -181,38 +170,49 @@
   </footer>
 
   <script>
-    // Hybrid deep-link: zkus 'spd:' URI scheme (= banky s nainstalovanou app
-    // ho zachytí a otevřou platební dialog). Pokud po 1.5s je user stále na
-    // stránce (= žádná app nereagovala), redirect na qr-platba.cz fallback
-    // (uvidí QR + tlačítka jednotlivých bank).
-    document.querySelectorAll('.qr-pay-link').forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        var spdUrl = link.getAttribute('data-spd');
-        var fallbackUrl = link.getAttribute('href');
-        if (!spdUrl) return; // bez data-spd nedělej nic, href se otevře normálně
+    // Copy-to-clipboard pro bankovní údaje (= mobilní fallback).
+    // Po kliknutí na "Kopírovat" zkopíruje text do schránky a krátce
+    // změní popisek tlačítka na "Zkopírováno ✓" (1.5s feedback).
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var targetId = btn.getAttribute('data-target');
+        var el = document.getElementById(targetId);
+        if (!el) return;
+        var text = el.innerText.trim();
 
-        e.preventDefault();
-        var startedAt = Date.now();
-        var hiddenOnce = false;
-        function onVisibilityChange () {
-          if (document.hidden) hiddenOnce = true;
+        var done = function () {
+          var orig = btn.innerText;
+          btn.innerText = 'Zkopírováno ✓';
+          btn.classList.add('copied');
+          setTimeout(function () {
+            btn.innerText = orig;
+            btn.classList.remove('copied');
+          }, 1500);
+        };
+
+        // Moderní cesta — Clipboard API (HTTPS only)
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done).catch(function () {
+            // Fallback pro starší prohlížeče
+            legacyCopy(text, done);
+          });
+        } else {
+          legacyCopy(text, done);
         }
-        document.addEventListener('visibilitychange', onVisibilityChange);
-
-        // Pokus o otevření bankovní app
-        window.location.href = spdUrl;
-
-        // Fallback po 1.5s — pokud se mezitím nezměnila viditelnost
-        // (= žádná app handler 'spd:' nezachytila)
-        setTimeout(function () {
-          document.removeEventListener('visibilitychange', onVisibilityChange);
-          var elapsed = Date.now() - startedAt;
-          if (!hiddenOnce && elapsed < 2500) {
-            window.location.href = fallbackUrl;
-          }
-        }, 1500);
       });
     });
+
+    function legacyCopy(text, done) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); done(); }
+      catch (e) { /* nepodařilo se */ }
+      document.body.removeChild(ta);
+    }
   </script>
 
 </body>
