@@ -618,6 +618,14 @@ footer .footer-links a {
   justify-content: flex-start;
 }
 
+/* Tlačítko 'Uložit QR' uvnitř grid karty se přilepí na spodní hranu
+   pomocí margin-top: auto. Tím se 3 karty v gridu zarovnají
+   spodními hranami (= tlačítka na stejné Y souřadnici), i když
+   mají různě dlouhé popisky/nadpisy. */
+.qr-item .qr-download {
+  margin-top: auto;
+}
+
 .qr-amount {
   font-size: 1.5rem;
   font-weight: 800;
