@@ -77,6 +77,45 @@ Za pár minut se ti to objeví na `strazcipramenu.cz/podpora.html`.
 
 ---
 
+## EUR QR kódy pro Slováky (SEPA platba)
+
+Na **podpora.html** je teď přepínač CZ / SK. Slovenská varianta potřebuje
+4 EUR QR kódy. Aktuálně jsou tam placeholder soubory — nahraď je
+skutečnými QR pro SEPA platbu:
+
+| Soubor | Částka | Doporučená zpráva |
+|---|---|---|
+| `qr_eur_5.png` | 5 EUR | `Strazci pramenu — pivko` |
+| `qr_eur_10.png` | 10 EUR | `Strazci pramenu — mapa` |
+| `qr_eur_20.png` | 20 EUR | `Strazci pramenu — patron` |
+| `qr_eur_custom.png` | bez částky | `Strazci pramenu — podpora` |
+
+### Generování SEPA QR kódů
+
+Na **https://qr-platba.cz/** musíš přepnout na **SEPA mód** (= zahraniční
+platby). Pak vyplň:
+
+- **IBAN:** `CZ4920100000002700191214`
+- **BIC / SWIFT:** `FIOBCZPPXXX` (Fio banka)
+- **Příjemce:** `Karel <tvoje příjmení>` (= povinné u SEPA)
+- **Měna:** EUR
+- **Částka:** 5 / 10 / 20 / prázdné (pro custom)
+- **Zpráva:** podle tabulky výše
+
+Klikni "Generovat" → stáhni PNG → ulož pod správným jménem do
+`C:\Users\Admin\strazcipramenu-web\`.
+
+### Po výměně 4 souborů:
+
+```bash
+cd C:\Users\Admin\strazcipramenu-web
+git add qr_eur_*.png
+git commit -m "Real SEPA EUR QR codes for SK donations"
+git push
+```
+
+---
+
 ## Alternativní cesta — extrahovat SPD z bankovní app
 
 Pokud máš ty 4 QR z bankovní aplikace (Smartbanking, George, Air Bank…),

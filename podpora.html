@@ -60,90 +60,189 @@
       </div>
     </section>
 
-    <section class="qr-section">
+    <section class="qr-section" data-country="cz">
       <h2>Vyberte si částku</h2>
+
+      <!-- COUNTRY SWITCHER -->
+      <div class="country-switcher" role="tablist">
+        <button class="country-tab active" data-set-country="cz" type="button">
+          🇨🇿 <span>Z Česka</span>
+        </button>
+        <button class="country-tab" data-set-country="sk" type="button">
+          🇸🇰 <span>Zo Slovenska</span>
+        </button>
+      </div>
+
       <p class="qr-subtitle">
-        Z počítače naskenujte QR kód svou bankovní aplikací.
-        Z mobilu klepněte na <strong>„Uložit QR"</strong> a v bance vyberte
-        <em>„Naskenovat QR ze galerie"</em>. Případně <a href="#bank-manual">opište IBAN ručně</a>.
+        <span class="cz-only">
+          Z počítače naskenujte QR kód českou bankovní aplikací.
+          Z mobilu klepněte na <strong>„Uložit QR"</strong> a v bance vyberte
+          <em>„Naskenovat QR ze galerie"</em>.
+          Případně <a href="#bank-manual">opište číslo účtu ručně</a>.
+        </span>
+        <span class="sk-only">
+          Z počítača naskenuj QR kód slovenskou bankovou aplikáciou —
+          platba pôjde cez SEPA v eurách. Z mobilu klepni na
+          <strong>„Uložiť QR"</strong> a v banke vyber
+          <em>„Skenovať QR z galérie"</em>.
+          Prípadne <a href="#bank-manual">prepíš IBAN ručne</a>.
+        </span>
       </p>
 
-      <!-- 3 PŘEDNASTAVENÉ ČÁSTKY -->
-      <div class="qr-grid">
+      <!-- ─── ČESKÉ QR (CZK) ─────────────────────────────────────── -->
+      <div class="country-section country-cz">
+        <div class="qr-grid">
 
-        <!-- 50 Kč — nízká kotva -->
-        <div class="qr-item">
-          <div class="qr-emoji">🍺</div>
-          <h3 class="qr-title">Pivo pro vývojáře</h3>
-          <p class="qr-desc">Za nachozené kilometry v lese.</p>
-          <div class="qr-box">
-            <img src="qr_50.png" alt="QR kód 50 Kč" class="qr-image" />
+          <!-- 50 Kč — nízká kotva -->
+          <div class="qr-item">
+            <div class="qr-emoji">🍺</div>
+            <h3 class="qr-title">Pivo pro vývojáře</h3>
+            <p class="qr-desc">Za nachozené kilometry v lese.</p>
+            <div class="qr-box">
+              <img src="qr_50.png" alt="QR kód 50 Kč" class="qr-image" />
+            </div>
+            <div class="qr-amount">50 Kč</div>
+            <a class="qr-download" href="qr_50.png" download="strazci_pramenu_50kc.png">
+              ⬇️ Uložit QR
+            </a>
           </div>
-          <div class="qr-amount">50 Kč</div>
-          <a class="qr-download" href="qr_50.png" download="strazci_pramenu_50kc.png">
+
+          <!-- 200 Kč — DOPORUČENO -->
+          <div class="qr-item qr-featured">
+            <div class="qr-badge">Nejoblíbenější ⭐</div>
+            <div class="qr-emoji">🗺️</div>
+            <h3 class="qr-title">Provoz mapy</h3>
+            <p class="qr-desc">Měsíční náklady na servery a databázi.</p>
+            <div class="qr-box">
+              <img src="qr_200.png" alt="QR kód 200 Kč" class="qr-image" />
+            </div>
+            <div class="qr-amount">200 Kč</div>
+            <a class="qr-download" href="qr_200.png" download="strazci_pramenu_200kc.png">
+              ⬇️ Uložit QR
+            </a>
+          </div>
+
+          <!-- 500 Kč — patron -->
+          <div class="qr-item">
+            <div class="qr-emoji">👑</div>
+            <h3 class="qr-title">Patron pramenů</h3>
+            <p class="qr-desc">Garantovaná podpora vývoje nových funkcí.</p>
+            <div class="qr-box">
+              <img src="qr_500.png" alt="QR kód 500 Kč" class="qr-image" />
+            </div>
+            <div class="qr-amount">500 Kč</div>
+            <a class="qr-download" href="qr_500.png" download="strazci_pramenu_500kc.png">
+              ⬇️ Uložit QR
+            </a>
+          </div>
+
+        </div>
+
+        <!-- ŽOLÍK CZK -->
+        <div class="qr-custom">
+          <div class="qr-emoji">🪵</div>
+          <h3 class="qr-title">Vlastní částka</h3>
+          <p class="qr-desc">
+            Naskenuj tento QR kód svou bankovní aplikací a v bance si
+            sám zadej, kolik chceš poslat.
+          </p>
+          <div class="qr-box">
+            <img src="qr_custom.png" alt="QR kód vlastní částka" class="qr-image" />
+          </div>
+          <a class="qr-download" href="qr_custom.png" download="strazci_pramenu_vlastni.png">
             ⬇️ Uložit QR
           </a>
         </div>
-
-        <!-- 200 Kč — DOPORUČENO -->
-        <div class="qr-item qr-featured">
-          <div class="qr-badge">Nejoblíbenější ⭐</div>
-          <div class="qr-emoji">🗺️</div>
-          <h3 class="qr-title">Provoz mapy</h3>
-          <p class="qr-desc">Měsíční náklady na servery a databázi.</p>
-          <div class="qr-box">
-            <img src="qr_200.png" alt="QR kód 200 Kč" class="qr-image" />
-          </div>
-          <div class="qr-amount">200 Kč</div>
-          <a class="qr-download" href="qr_200.png" download="strazci_pramenu_200kc.png">
-            ⬇️ Uložit QR
-          </a>
-        </div>
-
-        <!-- 500 Kč — patron -->
-        <div class="qr-item">
-          <div class="qr-emoji">👑</div>
-          <h3 class="qr-title">Patron pramenů</h3>
-          <p class="qr-desc">Garantovaná podpora vývoje nových funkcí.</p>
-          <div class="qr-box">
-            <img src="qr_500.png" alt="QR kód 500 Kč" class="qr-image" />
-          </div>
-          <div class="qr-amount">500 Kč</div>
-          <a class="qr-download" href="qr_500.png" download="strazci_pramenu_500kc.png">
-            ⬇️ Uložit QR
-          </a>
-        </div>
-
       </div>
 
-      <!-- ŽOLÍK — VLASTNÍ ČÁSTKA -->
-      <div class="qr-custom">
-        <div class="qr-emoji">🪵</div>
-        <h3 class="qr-title">Vlastní částka</h3>
-        <p class="qr-desc">
-          Naskenuj tento QR kód svou bankovní aplikací a v bance si
-          sám zadej, kolik chceš poslat.
-        </p>
-        <div class="qr-box">
-          <img src="qr_custom.png" alt="QR kód vlastní částka" class="qr-image" />
+      <!-- ─── SLOVENSKÉ QR (EUR / SEPA) ─────────────────────────── -->
+      <div class="country-section country-sk">
+        <div class="qr-grid">
+
+          <!-- 5 EUR — pivo -->
+          <div class="qr-item">
+            <div class="qr-emoji">🍺</div>
+            <h3 class="qr-title">Pivko pre vývojára</h3>
+            <p class="qr-desc">Za naprejdené kilometre v lese.</p>
+            <div class="qr-box">
+              <img src="qr_eur_5.png" alt="QR kód 5 EUR" class="qr-image" />
+            </div>
+            <div class="qr-amount">5 €</div>
+            <a class="qr-download" href="qr_eur_5.png" download="strazci_pramenu_5eur.png">
+              ⬇️ Uložiť QR
+            </a>
+          </div>
+
+          <!-- 10 EUR — DOPORUČENO -->
+          <div class="qr-item qr-featured">
+            <div class="qr-badge">Najobľúbenejšia ⭐</div>
+            <div class="qr-emoji">🗺️</div>
+            <h3 class="qr-title">Prevádzka mapy</h3>
+            <p class="qr-desc">Mesačné náklady na servery a databázu.</p>
+            <div class="qr-box">
+              <img src="qr_eur_10.png" alt="QR kód 10 EUR" class="qr-image" />
+            </div>
+            <div class="qr-amount">10 €</div>
+            <a class="qr-download" href="qr_eur_10.png" download="strazci_pramenu_10eur.png">
+              ⬇️ Uložiť QR
+            </a>
+          </div>
+
+          <!-- 20 EUR — patron -->
+          <div class="qr-item">
+            <div class="qr-emoji">👑</div>
+            <h3 class="qr-title">Patrón prameňov</h3>
+            <p class="qr-desc">Garantovaná podpora vývoja nových funkcií.</p>
+            <div class="qr-box">
+              <img src="qr_eur_20.png" alt="QR kód 20 EUR" class="qr-image" />
+            </div>
+            <div class="qr-amount">20 €</div>
+            <a class="qr-download" href="qr_eur_20.png" download="strazci_pramenu_20eur.png">
+              ⬇️ Uložiť QR
+            </a>
+          </div>
+
         </div>
-        <a class="qr-download" href="qr_custom.png" download="strazci_pramenu_vlastni.png">
-          ⬇️ Uložit QR
-        </a>
+
+        <!-- ŽOLÍK EUR -->
+        <div class="qr-custom">
+          <div class="qr-emoji">🪵</div>
+          <h3 class="qr-title">Vlastná suma</h3>
+          <p class="qr-desc">
+            Naskenuj tento QR kód svojou bankovou aplikáciou a v banke si
+            sám zadaj, koľko chceš poslať.
+          </p>
+          <div class="qr-box">
+            <img src="qr_eur_custom.png" alt="QR kód vlastná suma" class="qr-image" />
+          </div>
+          <a class="qr-download" href="qr_eur_custom.png" download="strazci_pramenu_vlastna.png">
+            ⬇️ Uložiť QR
+          </a>
+        </div>
       </div>
 
-      <!-- Bankovní údaje pro ruční platbu -->
+      <!-- BANKOVNÍ ÚDAJE — country-aware -->
       <div class="bank-details" id="bank-manual">
         <div class="bank-icon">📱</div>
-        <h3>Na mobilu? Pošli platbu ručně</h3>
+        <h3>
+          <span class="cz-only">Na mobilu? Pošli platbu ručně</span>
+          <span class="sk-only">Na mobile? Pošli platbu ručne</span>
+        </h3>
         <p class="bank-desc">
-          QR kódy se nedají naskenovat ze stejného mobilu, na kterém jsou.
-          Vyber si podle země a klikni na <strong>„Kopírovat"</strong> —
-          údaje vložíš do své bankovní aplikace.
+          <span class="cz-only">
+            QR kódy se nedají naskenovat ze stejného mobilu, na kterém
+            jsou. Klikni na <strong>„Kopírovat"</strong> a vlož údaje
+            do své bankovní aplikace.
+          </span>
+          <span class="sk-only">
+            QR kódy sa nedajú naskenovať z toho istého mobilu, na ktorom
+            sú. Klikni na <strong>„Kopírovať"</strong> a vlož údaje do
+            svojej bankovej aplikácie.
+          </span>
         </p>
 
         <!-- Z Česka — stačí číslo účtu -->
-        <div class="bank-block">
+        <div class="bank-block country-section country-cz">
           <h4 class="bank-block-title">🇨🇿 Z Česka</h4>
           <p class="bank-block-hint">
             Pro českou banku stačí <strong>číslo účtu</strong> — nemusíš
@@ -164,8 +263,8 @@
           </dl>
         </div>
 
-        <!-- Ze Slovenska / EU — SEPA přes IBAN -->
-        <div class="bank-block">
+        <!-- Zo Slovenska / EU -->
+        <div class="bank-block country-section country-sk">
           <h4 class="bank-block-title">🇸🇰 Zo Slovenska / EU</h4>
           <p class="bank-block-hint">
             Pošli platbu cez <strong>SEPA</strong> na náš IBAN. Sumu zadaj
@@ -177,30 +276,37 @@
             <dt>IBAN</dt>
             <dd>
               <code id="bank-iban">CZ4920100000002700191214</code>
-              <button class="copy-btn" data-target="bank-iban">Kopírovat</button>
+              <button class="copy-btn" data-target="bank-iban">Kopírovať</button>
             </dd>
             <dt>BIC / SWIFT</dt>
             <dd>
               <code id="bank-bic">FIOBCZPPXXX</code>
-              <button class="copy-btn" data-target="bank-bic">Kopírovat</button>
+              <button class="copy-btn" data-target="bank-bic">Kopírovať</button>
               <span class="bank-name">Fio banka</span>
             </dd>
             <dt>Správa pre prijímateľa</dt>
             <dd>
               <code id="bank-msg-sk">Strazci pramenu — podpora</code>
-              <button class="copy-btn" data-target="bank-msg-sk">Kopírovat</button>
+              <button class="copy-btn" data-target="bank-msg-sk">Kopírovať</button>
             </dd>
           </dl>
         </div>
 
         <p class="bank-note">
-          Částku si zvolíš sám podle svého uvážení.
-          Děkujeme za jakýkoli příspěvek! 💚
+          <span class="cz-only">
+            Částku si zvolíš sám podle svého uvážení.
+            Děkujeme za jakýkoli příspěvek! 💚
+          </span>
+          <span class="sk-only">
+            Sumu si zvolíš sám podľa svojho uváženia.
+            Ďakujeme za akýkoľvek príspevok! 💚
+          </span>
         </p>
       </div>
 
       <p class="qr-thanks">
-        Děkuji, že vám na studánkách záleží. 🌿
+        <span class="cz-only">Děkuji, že vám na studánkách záleží. 🌿</span>
+        <span class="sk-only">Ďakujem, že vám na studničkách záleží. 🌿</span>
       </p>
     </section>
 
@@ -218,6 +324,27 @@
   </footer>
 
   <script>
+    // Country switcher — přepíná mezi CZ (CZK) a SK (EUR) variantou
+    // celé stránky. Změna sets data-country atribut na <section.qr-section>,
+    // CSS pak zobrazí příslušné .country-section bloky.
+    (function () {
+      var section = document.querySelector('.qr-section');
+      var tabs = document.querySelectorAll('.country-tab');
+      function setCountry(c) {
+        if (!section) return;
+        section.setAttribute('data-country', c);
+        tabs.forEach(function (t) {
+          t.classList.toggle('active', t.getAttribute('data-set-country') === c);
+        });
+      }
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          setCountry(tab.getAttribute('data-set-country'));
+        });
+      });
+      // Default: CZ (= browser default je už 'cz' z HTML atributu)
+    })();
+
     // Copy-to-clipboard pro bankovní údaje (= mobilní fallback).
     // Po kliknutí na "Kopírovat" zkopíruje text do schránky a krátce
     // změní popisek tlačítka na "Zkopírováno ✓" (1.5s feedback).
