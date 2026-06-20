@@ -347,6 +347,103 @@ footer .footer-links a {
   font-size: 0.95rem;
 }
 
+/* ──────────── SUPPORT PAGE ──────────── */
+
+.hero-small {
+  padding: 60px 20px 80px;
+}
+
+.support-logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.support-main {
+  max-width: 760px;
+  margin: -50px auto 60px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.support-cards {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.support-card {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--divider);
+  box-shadow: var(--shadow);
+}
+
+.support-card-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.support-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.support-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.qr-section {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  border: 1px solid var(--divider);
+  box-shadow: var(--shadow);
+}
+
+.qr-section h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.qr-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.qr-box {
+  display: inline-block;
+  padding: 16px;
+  background: var(--bg);
+  border-radius: 16px;
+  border: 1px solid var(--divider);
+  margin-bottom: 24px;
+}
+
+.qr-image {
+  width: 240px;
+  height: 240px;
+  display: block;
+}
+
+.qr-thanks {
+  font-size: 1.05rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
 /* ──────────── RESPONSIVE ──────────── */
 
 @media (max-width: 600px) {
@@ -378,5 +475,22 @@ footer .footer-links a {
   }
   .privacy h1 {
     font-size: 1.75rem;
+  }
+  .support-main {
+    margin-top: -30px;
+  }
+  .support-card {
+    padding: 20px;
+  }
+  .qr-section {
+    padding: 30px 20px;
+  }
+  .qr-image {
+    width: 200px;
+    height: 200px;
+  }
+  .support-logo {
+    width: 72px;
+    height: 72px;
   }
 }
