@@ -61,11 +61,73 @@
     </section>
 
     <section class="qr-section">
-      <h2>Naskenujte QR kód</h2>
-      <p class="qr-subtitle">Dobrovolný dar na provoz a údržbu aplikace</p>
-      <div class="qr-box">
-        <img src="qr_support.png" alt="QR kód pro podporu projektu" class="qr-image" />
+      <h2>Vyberte si částku</h2>
+      <p class="qr-subtitle">
+        Naskenujte QR kód mobilem (z PC obrazovky) nebo na mobilu
+        klepněte na tlačítko a otevře se vaše bankovní aplikace.
+      </p>
+
+      <!-- 3 PŘEDNASTAVENÉ ČÁSTKY -->
+      <div class="qr-grid">
+
+        <!-- 50 Kč — nízká kotva -->
+        <div class="qr-item">
+          <div class="qr-emoji">🍺</div>
+          <h3 class="qr-title">Pivo pro vývojáře</h3>
+          <p class="qr-desc">Za nachozené kilometry v lese.</p>
+          <div class="qr-box">
+            <img src="qr_50.png" alt="QR kód 50 Kč" class="qr-image" />
+          </div>
+          <div class="qr-amount">50 Kč</div>
+          <a class="qr-button" href="https://qr-platba.cz/?platba=SPD%2A1.0%2AACC%3AVASE_IBAN%2AAM%3A50.00%2ACC%3ACZK%2AMSG%3AStudanky%20-%20Pivo">
+            📱 Zaplatit z mobilu
+          </a>
+        </div>
+
+        <!-- 200 Kč — DOPORUČENO -->
+        <div class="qr-item qr-featured">
+          <div class="qr-badge">Nejoblíbenější ⭐</div>
+          <div class="qr-emoji">🗺️</div>
+          <h3 class="qr-title">Provoz mapy</h3>
+          <p class="qr-desc">Měsíční náklady na servery a databázi.</p>
+          <div class="qr-box">
+            <img src="qr_200.png" alt="QR kód 200 Kč" class="qr-image" />
+          </div>
+          <div class="qr-amount">200 Kč</div>
+          <a class="qr-button qr-button-primary" href="https://qr-platba.cz/?platba=SPD%2A1.0%2AACC%3AVASE_IBAN%2AAM%3A200.00%2ACC%3ACZK%2AMSG%3AStudanky%20-%20Mapa">
+            📱 Zaplatit z mobilu
+          </a>
+        </div>
+
+        <!-- 500 Kč — patron -->
+        <div class="qr-item">
+          <div class="qr-emoji">👑</div>
+          <h3 class="qr-title">Patron pramenů</h3>
+          <p class="qr-desc">Garantovaná podpora vývoje nových funkcí.</p>
+          <div class="qr-box">
+            <img src="qr_500.png" alt="QR kód 500 Kč" class="qr-image" />
+          </div>
+          <div class="qr-amount">500 Kč</div>
+          <a class="qr-button" href="https://qr-platba.cz/?platba=SPD%2A1.0%2AACC%3AVASE_IBAN%2AAM%3A500.00%2ACC%3ACZK%2AMSG%3AStudanky%20-%20Patron">
+            📱 Zaplatit z mobilu
+          </a>
+        </div>
+
       </div>
+
+      <!-- ŽOLÍK — VLASTNÍ ČÁSTKA -->
+      <div class="qr-custom">
+        <div class="qr-emoji">🪵</div>
+        <h3 class="qr-title">Vlastní částka</h3>
+        <p class="qr-desc">
+          Pošli jakoukoli částku podle svého uvážení. Naskenuj a
+          v bance si sám zadej, kolik chceš poslat.
+        </p>
+        <div class="qr-box">
+          <img src="qr_custom.png" alt="QR kód vlastní částka" class="qr-image" />
+        </div>
+      </div>
+
       <p class="qr-thanks">
         Děkuji, že vám na studánkách záleží. 🌿
       </p>
