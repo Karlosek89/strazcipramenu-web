@@ -501,6 +501,11 @@ footer .footer-links a {
   align-items: center;
   position: relative;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  /* Aby border 2px (featured/premium) nezvětšoval celkovou šířku
+     a karta nevyčuhovala přes grid track na desktopu. */
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .qr-item:hover {
