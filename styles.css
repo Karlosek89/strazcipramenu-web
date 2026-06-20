@@ -677,6 +677,15 @@ footer .footer-links a {
   display: inline-block;
 }
 
+/* Žolík (CZK custom + SK custom): tlačítko 'Uložit QR' musí být na novém
+   řádku POD QR kódem a vystředěné. Bez tohoto by .qr-download s
+   inline-block flowal vedle qr-box. */
+.qr-custom .qr-download {
+  display: block;
+  width: fit-content;
+  margin: 14px auto 0;
+}
+
 .qr-button-custom {
   display: inline-block;
   width: auto;
