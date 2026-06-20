@@ -570,6 +570,27 @@ footer .footer-links a {
   display: block;
 }
 
+/* SK QR kódy jsou bez labelu 'QR Platba' (= čisté QR), takže
+   vyplňují celý box. Aby vizuálně odpovídaly CZ QR (které mají
+   label dole), zmenšujeme je + přidáváme vnitřní padding. */
+.country-sk .qr-image {
+  width: 132px;
+  height: 132px;
+  margin: 6px auto;
+}
+
+/* Karty v gridu mají stejnou výšku, ať CZ a SK varianty vypadají
+   konzistentně. Stretch je default grid behavior, ale qr-item je
+   flex column - musíme explicitně. */
+.qr-grid {
+  align-items: stretch;
+}
+
+.qr-item {
+  height: 100%;
+  justify-content: flex-start;
+}
+
 .qr-amount {
   font-size: 1.5rem;
   font-weight: 800;
