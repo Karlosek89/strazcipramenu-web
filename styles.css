@@ -579,6 +579,83 @@ footer .footer-links a {
   margin-top: 12px;
 }
 
+/* Sekce s bankovními údaji — fallback pro ruční platbu */
+.bank-details {
+  background: var(--bg);
+  border-radius: 16px;
+  padding: 28px 24px;
+  margin-top: 32px;
+  text-align: left;
+  border: 1px solid var(--divider);
+}
+
+.bank-details h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.bank-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.bank-list {
+  margin: 0 auto;
+  max-width: 480px;
+}
+
+.bank-list dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+.bank-list dt:first-child {
+  margin-top: 0;
+}
+
+.bank-list dd {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-left: 0;
+}
+
+.bank-list code {
+  font-family: 'Courier New', monospace;
+  background: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--divider);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  user-select: all;
+  -webkit-user-select: all;
+}
+
+.bank-list .bank-name {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-left: 6px;
+}
+
+.bank-note {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+}
+
 .qr-thanks {
   font-size: 1.1rem;
   color: var(--primary-dark);
