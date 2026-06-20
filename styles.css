@@ -508,19 +508,21 @@ footer .footer-links a {
   box-shadow: 0 8px 20px rgba(13, 51, 64, 0.08);
 }
 
-/* Doporučená — středová varianta */
+/* Doporučená — středová varianta. Zachována STEJNÁ velikost jako
+   ostatní karty (žádný scale), distinkce jen barvou/borderem/shadowem
+   aby spodní hrany 3 karet zůstaly zarovnané. */
 .qr-featured {
   background: linear-gradient(180deg, var(--accent-light) 0%, white 100%);
   border: 2px solid var(--accent);
-  transform: scale(1.03);
   box-shadow: 0 8px 24px rgba(76, 175, 130, 0.18);
 }
 
 .qr-featured:hover {
-  transform: scale(1.03) translateY(-2px);
+  transform: translateY(-2px);
 }
 
-/* Premium varianta — Patron (500 Kč / 20 EUR) — zlatý look */
+/* Premium varianta — Patron (500 Kč / 20 EUR) — zlatý look,
+   stejná velikost jako ostatní. */
 .qr-premium {
   background: linear-gradient(180deg, #FFF4D6 0%, #FFFCF2 100%);
   border: 2px solid #D4A017;
@@ -928,13 +930,8 @@ footer .footer-links a {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  /* Na mobilu featured nezvětšujeme (= jinak vyčuhuje z gridu) */
-  .qr-featured {
-    transform: none;
-  }
-  .qr-featured:hover {
-    transform: translateY(-2px);
-  }
+  /* (Mobile override pro .qr-featured už není potřeba — scale(1.03)
+     odstraněn z desktopu, všechny karty mají stejnou velikost.) */
   .qr-image {
     width: 180px;
     height: 180px;
