@@ -83,11 +83,15 @@ Na **podpora.html** je teď přepínač CZ / SK. Slovenská varianta potřebuje
 4 EUR QR kódy. Aktuálně jsou tam placeholder soubory — nahraď je
 skutečnými QR pro SEPA platbu:
 
+Částky jsou zvolené tak, aby zhruba odpovídaly CZK ekvivalentům
+(2 € ≈ 50 Kč, 8 € ≈ 200 Kč, 20 € ≈ 500 Kč) — slovenský a český user
+přispívají porovnatelnou hodnotu bez ohledu na měnu.
+
 | Soubor | Částka | Doporučená zpráva |
 |---|---|---|
-| `qr_eur_5.png` | 5 EUR | `Strazci pramenu — pivko` |
-| `qr_eur_10.png` | 10 EUR | `Strazci pramenu — mapa` |
-| `qr_eur_20.png` | 20 EUR | `Strazci pramenu — patron` |
+| `qr_eur_2.png` | 2 EUR (≈ 50 Kč) | `Strazci pramenu — pivko` |
+| `qr_eur_8.png` | 8 EUR (≈ 200 Kč) | `Strazci pramenu — mapa` |
+| `qr_eur_20.png` | 20 EUR (≈ 500 Kč) | `Strazci pramenu — patron` |
 | `qr_eur_custom.png` | bez částky | `Strazci pramenu — podpora` |
 
 ### Generování SEPA QR kódů
