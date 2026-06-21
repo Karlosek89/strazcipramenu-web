@@ -890,6 +890,27 @@ footer .footer-links a {
   margin-top: 16px;
 }
 
+.qr-signature {
+  text-align: center;
+  margin-top: 28px;
+  font-family: 'Dancing Script', 'Pacifico', 'Brush Script MT', cursive;
+  font-size: 1.85rem;
+  color: var(--primary-dark);
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.qr-signature-role {
+  display: block;
+  margin-top: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
 /* ──────────── RESPONSIVE ──────────── */
 
 @media (max-width: 600px) {
