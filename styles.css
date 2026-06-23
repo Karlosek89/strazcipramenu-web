@@ -262,13 +262,22 @@ a:hover {
 .screenshots-grid {
   display: flex;
   gap: 20px;
-  justify-content: center;
   align-items: flex-start;
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding: 16px 8px 24px;
+  /* padding-inline necháva první/poslední item s prostorem, pseudo-element
+     na začátku centruje obsah pokud se vejde, jinak scroll. */
+  padding: 16px 24px 24px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.screenshots-grid::before,
+.screenshots-grid::after {
+  content: "";
+  flex: 0 0 auto;
+  width: max(8px, calc((100% - 1080px) / 2));   /* doplní okraje aby se na velkých displejích obsah vycentroval */
 }
 
 .screenshots-grid figure {
