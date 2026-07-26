@@ -384,6 +384,13 @@ footer a {
   border-bottom-color: rgba(255, 255, 255, 0.3);
 }
 
+/* Odkaz na další appku autora — decentně mezi odkazy a copyrightem. */
+.dalsi-appka {
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
 footer a:hover {
   border-bottom-color: white;
 }
