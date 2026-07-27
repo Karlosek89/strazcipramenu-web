@@ -1378,3 +1378,70 @@ a.badge:focus-visible {
   background: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.6);
 }
+
+/* ---------------------------------------------------------------------------
+   iOS připravujeme — sběr e-mailů. Záměrně střídmější než hlavní CTA
+   na stažení, aby s ním nesoutěžilo o pozornost.
+   --------------------------------------------------------------------------- */
+.ios-soon {
+  max-width: 640px;
+  margin: -40px auto 70px;
+  padding: 32px 28px;
+  background: white;
+  border: 1px solid var(--divider);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.ios-soon h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--primary-dark);
+}
+
+.ios-soon p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 20px;
+}
+
+.ios-cta {
+  display: inline-block;
+  padding: 11px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--primary-dark) !important;
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.ios-cta:hover,
+.ios-cta:focus-visible {
+  background: var(--accent);
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+.ios-soon .ios-note {
+  margin: 14px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .ios-soon {
+    margin: -30px 16px 50px;
+    padding: 26px 20px;
+  }
+  .ios-soon h2 {
+    font-size: 1.15rem;
+  }
+  .ios-cta {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
