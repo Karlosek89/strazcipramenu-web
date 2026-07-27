@@ -79,6 +79,75 @@ function writeCache(items) {
   } catch { /* private mode / plno — nevadí */ }
 }
 
+// --- Lightbox (zvětšení fotky) ---------------------------------------------
+
+let lightboxItems = [];
+let lastFocused = null;
+
+function openLightbox(index) {
+  const it = lightboxItems[index];
+  const box = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  const cap = document.getElementById('lightbox-caption');
+  if (!it || !box || !img || !cap) return;
+
+  const meta = typeMeta(it.typ);
+  img.src = it.fotoUrl;
+  img.alt = it.springName || 'Studánka';
+  cap.textContent =
+    `${it.springName || 'Studánka'} — ${meta.label} · ${relativeTime(it.ts)}`;
+
+  lastFocused = document.activeElement;
+  box.hidden = false;
+  document.body.style.overflow = 'hidden';   // stránka pod overlayem nescrolluje
+  document.getElementById('lightbox-close')?.focus();
+}
+
+function closeLightbox() {
+  const box = document.getElementById('lightbox');
+  if (!box || box.hidden) return;
+  box.hidden = true;
+  document.body.style.overflow = '';
+  // Uvolnit fotku z paměti a vrátit fokus tam, odkud uživatel přišel
+  const img = document.getElementById('lightbox-img');
+  if (img) img.src = '';
+  if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+}
+
+let lightboxReady = false;
+
+function setupLightbox() {
+  if (lightboxReady) return;   // navázat listenery jen jednou
+  const box  = document.getElementById('lightbox');
+  const grid = document.getElementById('recent-springs-grid');
+  if (!box || !grid) return;
+  lightboxReady = true;
+
+  // Delegace — karty se vytvářejí dynamicky
+  grid.addEventListener('click', (e) => {
+    const card = e.target.closest('.recent-card');
+    if (card) openLightbox(Number(card.dataset.index));
+  });
+  // Klávesnice: karty jsou fokusovatelné (tabindex v renderu)
+  grid.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const card = e.target.closest('.recent-card');
+    if (!card) return;
+    e.preventDefault();
+    openLightbox(Number(card.dataset.index));
+  });
+
+  document.getElementById('lightbox-close')
+    ?.addEventListener('click', closeLightbox);
+  // Klik mimo fotku zavírá; klik na fotku/titulek ne
+  box.addEventListener('click', (e) => {
+    if (!e.target.closest('.lightbox-inner')) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+}
+
 function render(items) {
   const section = document.getElementById('recent-springs');
   const grid    = document.getElementById('recent-springs-grid');
@@ -89,20 +158,25 @@ function render(items) {
     return;
   }
 
-  grid.innerHTML = items.map((it) => {
+  lightboxItems = items;
+
+  grid.innerHTML = items.map((it, i) => {
     const meta = typeMeta(it.typ);
+    const name = escapeHtml(it.springName || 'Studánka');
     return `
-      <figure class="recent-card">
-        <img src="${escapeHtml(it.fotoUrl)}" alt="${escapeHtml(it.springName || 'Studánka')}"
+      <figure class="recent-card" data-index="${i}" tabindex="0"
+              role="button" aria-label="Zvětšit fotku: ${name}">
+        <img src="${escapeHtml(it.fotoUrl)}" alt="${name}"
              loading="lazy" referrerpolicy="no-referrer">
         <figcaption>
-          <span class="recent-name">${escapeHtml(it.springName || 'Studánka')}</span>
+          <span class="recent-name">${name}</span>
           <span class="recent-meta">${meta.icon} ${meta.label} · ${escapeHtml(relativeTime(it.ts))}</span>
         </figcaption>
       </figure>`;
   }).join('');
 
   section.hidden = false;
+  setupLightbox();
 }
 
 async function load() {
