@@ -198,6 +198,8 @@ async function load() {
       springName: it.springName || '',
       typ: it.typ || '',
       fotoUrl: it.fotoUrl,
+      // true = fotka je z této návštěvy, false = stávající fotka studánky
+      freshFoto: it.freshFoto === true,
       ts: typeof it.ts === 'number' ? it.ts : Date.now(),
     }));
 
