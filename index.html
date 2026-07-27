@@ -13,7 +13,8 @@
   <meta property="og:image" content="https://strazcipramenu.cz/favicon.png" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
-  <link rel="stylesheet" href="styles.css?v=2026-06-23" />
+  <link rel="stylesheet" href="styles.css?v=2026-07-27" />
+  <script type="module" src="recent-springs.js?v=2026-07-27" defer></script>
 </head>
 <body>
 
@@ -116,6 +117,16 @@
         <figcaption>Nejbližší studánky</figcaption>
       </figure>
     </div>
+  </section>
+
+  <!-- Živý výpis z aplikace — plní recent-springs.js z Firestore.
+       Skryté dokud nejsou data (nebo když se načtení nepovede). -->
+  <section class="recent-springs" id="recent-springs" hidden>
+    <h2>💧 Naposledy navštívené studánky</h2>
+    <p class="recent-intro">
+      Fotky, které do aplikace právě přidali Strážci pramenů v terénu.
+    </p>
+    <div class="recent-grid" id="recent-springs-grid"></div>
   </section>
 
   <section class="beta-testing">

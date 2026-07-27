@@ -1158,3 +1158,102 @@ footer .footer-links a {
     width: 100%;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Naposledy navštívené studánky — živý výpis z Firestore (recent-springs.js).
+   Sekce je v HTML `hidden`, JS ji odkryje až má data.
+   --------------------------------------------------------------------------- */
+.recent-springs {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 60px 24px 40px;
+  text-align: center;
+}
+
+.recent-springs h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: var(--primary-dark);
+}
+
+.recent-intro {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.55;
+}
+
+.recent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.recent-card {
+  margin: 0;
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--divider);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recent-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(13, 51, 64, 0.16);
+}
+
+.recent-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: var(--bg);
+}
+
+.recent-card figcaption {
+  padding: 14px 16px 16px;
+  text-align: left;
+}
+
+.recent-name {
+  display: block;
+  font-weight: 600;
+  color: var(--primary-dark);
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 5px;
+  /* Dlouhé názvy nesmí rozhodit kartu */
+  overflow-wrap: anywhere;
+}
+
+.recent-meta {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .recent-springs {
+    padding: 40px 16px 20px;
+    margin-bottom: 60px;
+  }
+  .recent-springs h2 {
+    font-size: 1.5rem;
+  }
+  .recent-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+  }
+  .recent-card figcaption {
+    padding: 12px 12px 14px;
+  }
+  .recent-name {
+    font-size: 0.92rem;
+  }
+  .recent-meta {
+    font-size: 0.78rem;
+  }
+}
