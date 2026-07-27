@@ -1364,3 +1364,17 @@ footer .footer-links a {
     height: 40px;
   }
 }
+
+/* Štítek v hlavičce funguje jako odkaz na Google Play — globální `a`
+   pravidlo by mu dalo tmavou barvu na tmavém pozadí, proto explicitně. */
+a.badge {
+  color: #fff !important;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+a.badge:hover,
+a.badge:focus-visible {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+}
