@@ -1,21 +1,20 @@
 // ---------------------------------------------------------------------------
 // Poslední navštívené studánky — živý výpis z Firestore.
 //
-// Čte collection group `logs` (veřejné čtení dle firestore.rules) a vybírá
-// poslední logy, které mají fotku. Zobrazuje POUZE neosobní údaje:
-// jméno studánky, typ, fotku a čas. Žádná identita uživatele.
+// Čte JEDEN dokument `public/recent_logs`, který plní Cloud Functions
+// (onLogCreatedUpdateRecent + rebuildRecentLogs ve functions/index.js).
 //
-// Firestore neumí zkombinovat `where(fotoUrl != null)` s `orderBy(timestamp)`
-// (nerovnost musí být první v orderBy), proto načteme posledních N logů
-// a fotky vyfiltrujeme až na klientovi.
+// Proč snapshot a ne přímý dotaz na logy:
+//   1. CENA — 1 read místo ~24 na každé načtení stránky.
+//   2. SOUKROMÍ — log dokumenty obsahují userEmail/userId. Snapshot má
+//      jen neosobní pole, takže prohlížeč osobní údaje vůbec nestahuje.
 //
-// Výsledek se cachuje v localStorage (15 min) — šetří Firestore čtení
-// při opakovaných návštěvách.
+// Výsledek se navíc cachuje v localStorage (15 min).
 // ---------------------------------------------------------------------------
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
 import {
-  getFirestore, collectionGroup, query, orderBy, limit, getDocs,
+  getFirestore, doc, getDoc,
 } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
 const firebaseConfig = {
@@ -27,10 +26,9 @@ const firebaseConfig = {
   appId: '1:13925728081:web:9c790e3d4cbf6014945d70',
 };
 
-const FETCH_LIMIT = 24;   // kolik logů načteme (mezi nimi hledáme fotky)
-const SHOW_COUNT  = 6;    // kolik karet zobrazíme
-const CACHE_KEY   = 'sp_recent_logs_v1';
-const CACHE_TTL   = 15 * 60 * 1000; // 15 minut
+const SHOW_COUNT = 6;                 // kolik karet zobrazíme (doc jich má 12)
+const CACHE_KEY  = 'sp_recent_logs_v2';
+const CACHE_TTL  = 15 * 60 * 1000;    // 15 minut
 
 const TYPE_META = {
   studanka: { icon: '⛲', label: 'Studánka' },
@@ -43,7 +41,7 @@ function typeMeta(typ) {
   return TYPE_META[typ] || { icon: '💧', label: 'Vodní zdroj' };
 }
 
-/** "před 3 hodinami" / "včera" / "12. 7." */
+/** "před 3 h" / "včera" / "12. 7." */
 function relativeTime(ms) {
   const diff = Date.now() - ms;
   const min = Math.floor(diff / 60000);
@@ -115,31 +113,19 @@ async function load() {
   }
 
   const db = getFirestore(initializeApp(firebaseConfig));
-  const snap = await getDocs(query(
-    collectionGroup(db, 'logs'),
-    orderBy('timestamp', 'desc'),
-    limit(FETCH_LIMIT),
-  ));
+  const snap = await getDoc(doc(db, 'public', 'recent_logs'));
+  if (!snap.exists()) return;    // Cloud Function doc ještě nenaplnila
 
-  const items = [];
-  const seenSprings = new Set();
-  snap.forEach((doc) => {
-    if (items.length >= SHOW_COUNT) return;
-    const d = doc.data();
-    const foto = d.fotoUrl;
-    if (typeof foto !== 'string' || !foto.startsWith('http')) return;
-    // Jedna studánka jen jednou — ať výpis není zaplněný stejným místem.
-    const sid = d.springId || doc.ref.parent.parent?.id || '';
-    if (sid && seenSprings.has(sid)) return;
-    if (sid) seenSprings.add(sid);
-    // Ukládáme jen neosobní údaje (bez userId / userEmail).
-    items.push({
-      springName: d.springName || '',
-      typ: d.typ || '',
-      fotoUrl: foto,
-      ts: d.timestamp?.toMillis?.() ?? Date.now(),
-    });
-  });
+  // Server už položky deduplikoval podle studánky a seřadil — jen ořízneme.
+  const items = (snap.data().items || [])
+    .filter((it) => typeof it?.fotoUrl === 'string' && it.fotoUrl.startsWith('http'))
+    .slice(0, SHOW_COUNT)
+    .map((it) => ({
+      springName: it.springName || '',
+      typ: it.typ || '',
+      fotoUrl: it.fotoUrl,
+      ts: typeof it.ts === 'number' ? it.ts : Date.now(),
+    }));
 
   writeCache(items);
   render(items);
