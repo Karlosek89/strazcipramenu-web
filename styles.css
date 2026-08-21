@@ -1445,3 +1445,34 @@ a.badge:focus-visible {
     box-sizing: border-box;
   }
 }
+
+/* ──────────── DVA OBCHODY (Android + iOS) ──────────── */
+
+/* Odznaky v hlavičce. Původně tam byl jeden odkaz s margin-top:20px;
+   ten margin teď nese celý řádek, aby mezi odznaky nevznikla mezera navíc. */
+.hero .badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hero .badge-row .badge {
+  margin-top: 0;
+}
+
+/* Tlačítka v oznamovací sekci. Na mobilu pod sebou přes celou šířku,
+   od 480 px vedle sebe. */
+.store-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+@media (max-width: 479px) {
+  .store-buttons .beta-cta {
+    width: 100%;
+  }
+}
