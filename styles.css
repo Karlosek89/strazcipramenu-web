@@ -1476,3 +1476,29 @@ a.badge:focus-visible {
     width: 100%;
   }
 }
+
+/* ──────────── PODPORA V HLAVIČCE ──────────── */
+
+/* Záměrně jinak než odznaky obchodů: podtržený text bez rámečku, aby
+   nekonkuroval stahování. Primární akce je „stáhni si to", podpora je
+   nabídka pro toho, kdo už je rozhodnutý. */
+.hero .hero-support {
+  display: inline-block;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 4px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.hero .hero-support:hover,
+.hero .hero-support:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  text-decoration-color: #fff;
+}
